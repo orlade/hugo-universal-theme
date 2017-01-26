@@ -23,11 +23,15 @@
                                 <p>{{ .text }}</p>
                             </div>
                             <div class="bottom">
-                                <div class="icon"><i class="fa fa-quote-left"></i>
-                                </div>
+                                <div class="icon"><i class="fa fa-quote-left"></i></div>
                                 <div class="name-picture">
+                                    {{ if in .avatar "fa-" }}
+                                    <div class="icon"><i class="fa {{ .avatar }}"></i></div>
+                                    {{ else }}
                                     <img class="" alt="" src="{{ .avatar | absURL }}">
+                                    {{ end }}
                                     <h5>{{ .name }}</h5>
+
                                     <p>{{ .position }}</p>
                                 </div>
                             </div>

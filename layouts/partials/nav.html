@@ -25,17 +25,17 @@
                     <li>
                         {{ if isset . "items" }}
                         {{ if isset . "url" }}
-                            <a href="{{ .Site.BaseURL }}{{ .url }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="true">{{ .name }}</a>
+                            <a href="{{ $.Site.BaseURL }}{{ .url }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="true">{{ .name }}</a>
                         {{ else }}
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="true">{{ .name }}</a>
                         {{ end }}
                         <ul class="dropdown-menu">
                         {{ range .items }}
-                            <li><a href="{{ .Site.BaseURL }}{{ .url }}">{{ .name }}</a></li>
+                            <li><a href="{{ $.Site.BaseURL }}{{ .url }}">{{ .name }}</a></li>
                         {{ end }}
                         </ul>
                         {{ else }}
-                        <a href="{{ .Site.BaseURL }}{{ .url }}">{{ .name }}</a>
+                        <a href="{{ $.Site.BaseURL }}{{ .url }}">{{ .name }}</a>
                         {{ end }}
                     </li>
                     {{ end }}
